@@ -1,0 +1,974 @@
+:root {
+    --lucida: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    --light-gray: #d6d6d6;
+    --dark-gray: #191919;
+}
+
+body {
+    background-color: var(--dark-gray);
+    margin: 0;
+}
+
+@media screen and (min-width: 40em) {}
+
+@media screen and (min-width: 64em) {}
+
+@media (min-width: 1300px) {}
+
+header {
+    max-width: 100vw;
+    border-bottom: 2px solid black;
+    background: var(--light-gray);
+
+    & .header-content {
+        max-width: 1200px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-inline: auto;
+        padding-inline: 20px;
+        padding-block: 4px;
+    }
+
+    & .logo-and-title {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        justify-content: start;
+        align-items: center;
+
+        & .logo {
+            font-size: 24px;
+            color: black;
+            border: 4px solid black;
+            border-radius: 7px;
+            padding: 4px 6px;
+            background-color: limegreen;
+        }
+    }
+
+    & a {
+        font-size: 18px;
+        font-family: var(--lucida);
+        margin: 0;
+        font-weight: bold;
+        color: black;
+        text-decoration: none;
+    }
+
+    & a,
+    .title {
+        font-size: 18px;
+        font-family: var(--lucida);
+        margin: 0;
+        max-width: 40vw;
+    }
+}
+
+@media screen and (min-width: 40em) {
+    header .logo {
+        font-size: 24px;
+        border-radius: 7px;
+        padding: 4px 6px;
+        background-color: limegreen;
+    }
+
+    header a,
+    header .title {
+        font-size: 26px;
+    }
+}
+
+main {
+    overflow: overlay;
+    min-height: calc(100vh - 138px);
+}
+
+@media screen and (min-width: 40em) {
+    main {
+        min-height: calc(100vh - 104px);
+    }
+}
+
+footer {
+    max-width: 100vw;
+    padding-block: 10px;
+    border-top: 2px solid black;
+    background: var(--light-gray);
+
+    & .footer-content {
+        max-width: 1200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin-inline: auto;
+        padding-inline: 20px;
+        padding-block: 4px;
+        gap: 10px;
+        text-align: center;
+        color: black;
+
+        & a {
+            font-size: 20px;
+            color: black;
+            font-family: var(--lucida);
+            font-weight: bold;
+            gap: 4px;
+            text-decoration: none;
+
+            & i {
+                padding-right: 4px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 40em) {
+    footer .footer-content {
+        flex-direction: row;
+    }
+}
+
+@media screen and (min-width: 64em) {}
+
+@media screen and (min-width: 1300px) {}
+
+
+.periodic-table {
+    margin-inline: auto;
+    color: white;
+    display: grid;
+    font-family: helvetica;
+    grid-template-columns: repeat(19, auto);
+    grid-template-rows: repeat(10, minmax(50px, auto));
+    grid-template-areas:
+        "H . . . PTL PTL PTL PTL PTL PTL PTL PTL . . . . . . He"
+        "Li Be . . PTL PTL PTL PTL PTL PTL  PTL PTL . B C N O F Ne"
+        "Na Mg . . . . . . . . . . . Al Si P S Cl Ar"
+        "K Ca Sc . Ti V Cr Mn Fe Co Ni Cu Zn Ga Ge As Se Br Kr"
+        "Rb Sr Y . Zr Nb Mo Tc Ru Rh Pd Ag Cd In Sn Sb Te I Xe"
+        "Cs Ba Lanthanoids . Hf Ta W Re Os Ir Pt Au Hg Tl Pb Bi Po At Rn"
+        "Fr Ra Actinoids . Rf Db Sg Bh Hs Mt Ds Rg Cn Nh Fl Mc Lv Ts Og"
+        ". . . . . . . . . . . . . . . . . . ."
+        ". . . La Ce Pr Nd Pm Sm Eu Gd Tb Dy Ho Er Tm Yb Lu ."
+        ". . . Ac Th Pa U Np Pu Am Cm Bk Cf Es Fm Md No Lr .";
+    justify-content: center;
+    padding: 20px;
+    overflow: scroll;
+    width: fit-content;
+}
+
+@media (min-width: 40em) {
+    .periodic-table {
+        grid-template-rows: repeat(10, minmax(50px, auto));
+    }
+}
+
+@media (min-width: 64em) {
+    .periodic-table {
+        grid-template-rows: repeat(10, minmax(30px, auto));
+    }
+}
+
+@media (min-width: 1300px) {
+    .periodic-table {
+        grid-template-rows: repeat(10, minmax(30px, auto));
+    }
+}
+
+
+.table-legend {
+    grid-area: PTL;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    box-sizing: border-box;
+
+    & .category-title {
+        display: inline-flex;
+        border: 1px solid black;
+        border-radius: 6px;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        font-family: var(--lucida);
+        font-size: 12px;
+    }
+}
+
+
+
+.element {
+    background-color: gray;
+    border: 1px solid black;
+    border-radius: 3px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    text-align: center;
+    font-family: var(--lucida);
+    width: 54px;
+    height: 52px;
+
+    & .topRow {
+        padding: 0em 2px;
+        text-align: left;
+        font-size: 10px;
+    }
+
+    & p {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    & .element-name {
+        font-size: 10px;
+    }
+
+    & .bottomRow {
+        margin: 0;
+        padding: 0;
+        & p:not(.element-name) {
+            display: none;
+        }
+    }
+    & .element-abbreviation {
+        font-size: 14px;
+    }
+    & .row-numbers {
+        font-size: 8px; 
+    }
+}
+
+@media screen and (hover: hover) {
+    .element:hover {
+        box-shadow: 3px 3px 3px black;
+        cursor: pointer;
+        transform: scale(1.35);
+        z-index: 5;
+    }
+}
+
+.element#Lanthanoids,
+.element#Actinoids {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    & .element-name {
+        font-size: 8px;
+    }
+}
+
+
+
+@media (min-width: 40em) {
+    .element {}
+}
+
+@media (min-width: 64em) {
+    .element {}
+}
+
+@media (min-width: 1300px) {
+    .element {
+        min-width: 65px;
+        min-height: 65px;
+        & .element-abbreviation {
+                font-size: 18px;
+            }
+        & .bottomRow p:not(.element-name) {
+            display: inline;
+            font-size: 10px;
+        }
+    }
+
+    .element#Lanthanoids .element-name,
+    .element#Actinoids .element-name {
+            font-size: 10px;
+    }
+}
+
+
+
+
+/* * ===  Modal === * */
+#modalBackground {
+    background-color: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    z-index: 10;
+    position: absolute;
+    inset: 0 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    height: 100%;
+    overflow: scroll;
+
+    & #modalContent {
+        background-color: lightgray;
+        border: 2px solid black;
+        border-radius: 12px;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
+        color: black;
+        opacity: 1;
+        text-align: start;
+        visibility: inherit;
+        z-index: 15;
+        padding: 20px;
+        margin: 15px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        max-width: 600px;
+
+        & .description {
+            line-height: 1.85em;
+            font-weight: bold;
+            font-family: var(--lucida);
+
+            & span {
+                font-weight: normal;
+            }
+        }
+    }
+
+    & #modalMiniElement {
+        border: 3px solid black;
+        border-radius: 6px;
+        color: white;
+        justify-self: center;
+        margin: 0 auto;
+        width: 180px;
+        height: 160px;
+
+        & #modalMiniAbbr {
+            font-size: 60px;
+        }
+
+        & #modalMiniName {
+            font-size: 20px;
+            display: inline;
+        }
+        & #modalMiniMass {
+            display: inline;
+            font-size: 16px;
+            padding-top: 6px;
+        }
+        & #modalMiniAtomicNumber {
+            font-size: 20px;
+        }
+        & .bottomRow {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    & #modalCloseButton {
+        width: fit-content;
+        align-self: center;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 8px 24px;
+        border: 2px solid black;
+        border-radius: 8px;
+        background-color: #2865e1;
+        color: white;
+        & i {
+            font-weight: 700;
+        }
+    }
+}
+
+
+
+
+
+@media screen and (min-width: 40em) {
+    #modalBackground {
+        #modalContent {
+            padding: 40px;
+            margin: 20px;
+            & .description {
+                font-size: 18px;
+            }
+        }
+
+    }
+}
+
+@media screen and (min-width: 64em) {}
+
+@media (min-width: 1300px) {}
+
+
+
+
+
+@media screen and (min-width: 40em) {
+    #modalContent>p {}
+}
+
+@media screen and (min-width: 64em) {
+    #modalContent>p {}
+}
+
+@media (min-width: 1300px) {
+    #modalContent>p {}
+}
+
+
+
+@media screen and (min-width: 40em) {}
+
+@media screen and (min-width: 64em) {}
+
+@media (min-width: 1300px) {}
+
+
+
+
+
+
+
+
+/* * ===  Legend Colors === * */
+.alkaliMetals {
+    background-color: brown;
+}
+
+.alkalineEarthMetals {
+    background-color: orange;
+}
+
+.lanthanoids {
+    background-color: darkblue;
+}
+
+.actinoids {
+    background-color: maroon;
+}
+
+.transitionMetals {
+    background-color: red;
+}
+
+.postTransitionMetals {
+    background-color: blue;
+}
+
+.metalloids {
+    background-color: darkgreen;
+}
+
+.reactiveNonmetals {
+    background-color: limegreen;
+}
+
+.nobleGases {
+    background-color: purple;
+}
+
+.noSeries {
+    background-color: #474747;
+}
+
+
+
+
+
+
+
+/* * === Grid Assignments === * */
+/* * === Periodic Table === * */
+#H {
+    grid-area: H;
+}
+
+#He {
+    grid-area: He;
+}
+
+#Li {
+    grid-area: Li;
+}
+
+#Be {
+    grid-area: Be;
+}
+
+#B {
+    grid-area: B;
+}
+
+#C {
+    grid-area: C;
+}
+
+#N {
+    grid-area: N;
+}
+
+#O {
+    grid-area: O;
+}
+
+#F {
+    grid-area: F;
+}
+
+#Ne {
+    grid-area: Ne;
+}
+
+#Na {
+    grid-area: Na;
+}
+
+#Mg {
+    grid-area: Mg;
+}
+
+#Al {
+    grid-area: Al;
+}
+
+#Si {
+    grid-area: Si;
+}
+
+#P {
+    grid-area: P;
+}
+
+#S {
+    grid-area: S;
+}
+
+#Cl {
+    grid-area: Cl;
+}
+
+#Ar {
+    grid-area: Ar;
+}
+
+
+#K {
+    grid-area: K;
+}
+
+#Ca {
+    grid-area: Ca;
+}
+
+#Sc {
+    grid-area: Sc;
+}
+
+#Ti {
+    grid-area: Ti;
+}
+
+#V {
+    grid-area: V;
+}
+
+#Cr {
+    grid-area: Cr;
+}
+
+#Mn {
+    grid-area: Mn;
+}
+
+#Fe {
+    grid-area: Fe;
+}
+
+#Co {
+    grid-area: Co;
+}
+
+#Ni {
+    grid-area: Ni;
+}
+
+#Cu {
+    grid-area: Cu;
+}
+
+#Zn {
+    grid-area: Zn;
+}
+
+#Ga {
+    grid-area: Ga;
+}
+
+#Ge {
+    grid-area: Ge;
+}
+
+#As {
+    grid-area: As;
+}
+
+#Se {
+    grid-area: Se;
+}
+
+#Br {
+    grid-area: Br;
+}
+
+#Kr {
+    grid-area: Kr;
+}
+
+
+#Rb {
+    grid-area: Rb;
+}
+
+#Sr {
+    grid-area: Sr;
+}
+
+#Y {
+    grid-area: Y;
+}
+
+#Zr {
+    grid-area: Zr;
+}
+
+#Nb {
+    grid-area: Nb;
+}
+
+#Mo {
+    grid-area: Mo;
+}
+
+#Tc {
+    grid-area: Tc;
+}
+
+#Ru {
+    grid-area: Ru;
+}
+
+#Rh {
+    grid-area: Rh;
+}
+
+#Pd {
+    grid-area: Pd;
+}
+
+#Ag {
+    grid-area: Ag;
+}
+
+#Cd {
+    grid-area: Cd;
+}
+
+#In {
+    grid-area: In;
+}
+
+#Sn {
+    grid-area: Sn;
+}
+
+#Sb {
+    grid-area: Sb;
+}
+
+#Te {
+    grid-area: Te;
+}
+
+#I {
+    grid-area: I;
+}
+
+#Xe {
+    grid-area: Xe;
+}
+
+
+
+#Cs {
+    grid-area: Cs;
+}
+
+#Ba {
+    grid-area: Ba;
+}
+
+#Lanthanoids {
+    grid-area: Lanthanoids;
+}
+
+#Hf {
+    grid-area: Hf;
+}
+
+#Ta {
+    grid-area: Ta;
+}
+
+#W {
+    grid-area: W;
+}
+
+#Re {
+    grid-area: Re;
+}
+
+#Os {
+    grid-area: Os;
+}
+
+#Ir {
+    grid-area: Ir;
+}
+
+#Pt {
+    grid-area: Pt;
+}
+
+#Au {
+    grid-area: Au;
+}
+
+#Hg {
+    grid-area: Hg;
+}
+
+#Tl {
+    grid-area: Tl;
+}
+
+#Pb {
+    grid-area: Pb;
+}
+
+#Bi {
+    grid-area: Bi;
+}
+
+#Po {
+    grid-area: Po;
+}
+
+#At {
+    grid-area: At;
+}
+
+#Rn {
+    grid-area: Rn;
+}
+
+
+
+#Fr {
+    grid-area: Fr;
+}
+
+#Ra {
+    grid-area: Ra;
+}
+
+#Actinoids {
+    grid-area: Actinoids;
+}
+
+#Rf {
+    grid-area: Rf;
+}
+
+#Db {
+    grid-area: Db;
+}
+
+#Sg {
+    grid-area: Sg;
+}
+
+#Bh {
+    grid-area: Bh;
+}
+
+#Hs {
+    grid-area: Hs;
+}
+
+#Mt {
+    grid-area: Mt;
+}
+
+#Ds {
+    grid-area: Ds;
+}
+
+#Rg {
+    grid-area: Rg;
+}
+
+#Cn {
+    grid-area: Cn;
+}
+
+#Nh {
+    grid-area: Nh;
+}
+
+#Fl {
+    grid-area: Fl;
+}
+
+#Mc {
+    grid-area: Mc;
+}
+
+#Lv {
+    grid-area: Lv;
+}
+
+#Ts {
+    grid-area: Ts;
+}
+
+#Og {
+    grid-area: Og;
+}
+
+
+#La {
+    grid-area: La;
+}
+
+#Ce {
+    grid-area: Ce;
+}
+
+#Pr {
+    grid-area: Pr;
+}
+
+#Nd {
+    grid-area: Nd;
+}
+
+#Pm {
+    grid-area: Pm;
+}
+
+#Sm {
+    grid-area: Sm;
+}
+
+#Eu {
+    grid-area: Eu;
+}
+
+#Gd {
+    grid-area: Gd;
+}
+
+#Tb {
+    grid-area: Tb;
+}
+
+#Dy {
+    grid-area: Dy;
+}
+
+#Ho {
+    grid-area: Ho;
+}
+
+#Er {
+    grid-area: Er;
+}
+
+#Tm {
+    grid-area: Tm;
+}
+
+#Yb {
+    grid-area: Yb;
+}
+
+#Lu {
+    grid-area: Lu;
+}
+
+
+#Ac {
+    grid-area: Ac;
+}
+
+#Th {
+    grid-area: Th;
+}
+
+#Pa {
+    grid-area: Pa;
+}
+
+#U {
+    grid-area: U;
+}
+
+#Np {
+    grid-area: Np;
+}
+
+#Pu {
+    grid-area: Pu;
+}
+
+#Am {
+    grid-area: Am;
+}
+
+#Cm {
+    grid-area: Cm;
+}
+
+#Bk {
+    grid-area: Bk;
+}
+
+#Cf {
+    grid-area: Cf;
+}
+
+#Es {
+    grid-area: Es;
+}
+
+#Fm {
+    grid-area: Fm;
+}
+
+#Md {
+    grid-area: Md;
+}
+
+#No {
+    grid-area: No;
+}
+
+#Lr {
+    grid-area: Lr;
+}

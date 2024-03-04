@@ -1,0 +1,1407 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Periodic Table</title>
+    <link rel="stylesheet" href="files-for-periodic-table/periodicTableStyles.css">
+    <script src="https://kit.fontawesome.com/afaae90d55.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-and-title">
+                <i class="fa-solid fa-flask logo"></i>
+                <h1 class="title">Periodic Table</h1>
+            </div>
+
+            <a rel="noreferrer" href="https://patrickmooney.tech">Home</a>
+        </div>
+    </header>
+    <main>
+        <div id="modalBackground">
+            <div id="modalContent" class="modal">
+                <div id="modalMiniElement" class="element">
+                    <div class="topRow">
+                        <p id="modalMiniAtomicNumber">X</p>
+                    </div>
+                    <p id="modalMiniAbbr">H</p>
+                    <div class="bottomRow">
+                        <p id="modalMiniName">Hydrogen</p>
+                        <p id="modalMiniMass">1.01</p>
+                    </div>
+                </div>
+                <p class="description">
+                    Atomic Number: <span id="atomicNumber">...</span> <br>
+                    Name: <span id="elementName">...</span> <br>
+                    Atomic mass: <span id="atomicMass">...</span> <br>
+                    Type: <span id="elementType">...</span> <br>
+                    Melting point: <span id="meltingPoint">...</span><br>
+                    Boiling point: <span id="boilingPoint">...</span> <br>
+                    Discovery date: <span id="discoveryDate">...</span><br>
+                    Discovered by: <span id="discoveredBy">...</span>
+                </p>
+                <button id="modalCloseButton" onClick="showModal('n/a')"><i class="fa-solid fa-xmark"></i> Close </button>
+            </div>
+        </div>
+        <div class="periodic-table">
+            <div class="table-legend">
+                <p class="category-title alkaliMetals">Alkali Metals</p>
+                <p class="category-title alkalineEarthMetals">Alkaline Earth Metals</p>
+                <p class="category-title lanthanoids">Lanthanoids</p>
+                <p class="category-title actinoids">Actinoids</p>
+                <p class="category-title transitionMetals">Transition Metals</p>
+                <p class="category-title postTransitionMetals">Post-Transition Metals</p>
+                <p class="category-title metalloids">Metalloids</p>
+                <p class="category-title reactiveNonmetals">Reactive Non-Metals</p>
+                <p class="category-title nobleGases">Noble Gases</p>
+            </div>
+
+            <div id="H" class="element reactiveNonmetals" onClick="showModal(id)" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>1</p>
+                </div>
+                <p class="element-abbreviation">H</p>
+                <div class="bottomRow">
+                    <p class="element-name">Hydrogen</p>
+                    <p>1.01</p>
+                </div>
+            </div>
+
+            <div id="He" class="element nobleGases" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>2</p>
+                </div>
+                <p class="element-abbreviation">He</p>
+                <div class="bottomRow">
+                    <p class="element-name">Helium</p>
+                    <p>4.0026</p>
+                </div>
+            </div>
+
+            <div id="Li" class="element alkaliMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>3</p>
+                </div>
+                <p class="element-abbreviation">Li</p>
+                <div class="bottomRow">
+                    <p class="element-name">Lithium</p>
+                    <p>6.94</p>
+                </div>
+            </div>
+
+            <div id="Be" class="element alkalineEarthMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>4</p>
+                </div>
+                <p class="element-abbreviation">Be</p>
+                <div class="bottomRow">
+                    <p class="element-name">Beryllium</p>
+                    <p>9.01</p>
+                </div>
+            </div>
+
+            <div id="B" class="element metalloids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>5</p>
+                </div>
+                <p class="element-abbreviation">B</p>
+                <div class="bottomRow">
+                    <p class="element-name">Boron</p>
+                    <p>10.81</p>
+                </div>
+            </div>
+
+            <div id="C" class="element reactiveNonmetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>6</p>
+                </div>
+                <p class="element-abbreviation">C</p>
+                <div class="bottomRow">
+                    <p class="element-name">Carbon</p>
+                    <p>12.01</p>
+                </div>
+            </div>
+
+            <div id="N" class="element reactiveNonmetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>7</p>
+                </div>
+                <p class="element-abbreviation">N</p>
+                <div class="bottomRow">
+                    <p class="element-name">Nitrogen</p>
+                    <p>14.01</p>
+                </div>
+            </div>
+
+            <div id="O" class="element reactiveNonmetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>8</p>
+                </div>
+                <p class="element-abbreviation">O</p>
+                <div class="bottomRow">
+                    <p class="element-name">Oxygen</p>
+                    <p>16.00</p>
+                </div>
+            </div>
+
+            <div id="F" class="element reactiveNonmetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>9</p>
+                </div>
+                <p class="element-abbreviation">F</p>
+                <div class="bottomRow">
+                    <p class="element-name">Fluorine</p>
+                    <p>19.00</p>
+                </div>
+            </div>
+
+            <div id="Ne" class="element nobleGases" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>10</p>
+                </div>
+                <p class="element-abbreviation">Ne</p>
+                <div class="bottomRow">
+                    <p class="element-name">Neon</p>
+                    <p>20.18</p>
+                </div>
+            </div>
+
+
+
+
+
+            <div id="Na" class="element alkaliMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>11</p>
+                </div>
+                <p class="element-abbreviation">Na</p>
+                <div class="bottomRow">
+                    <p class="element-name">Sodium</p>
+                    <p>22.99</p>
+                </div>
+            </div>
+
+            <div id="Mg" class="element alkalineEarthMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>12</p>
+                </div>
+                <p class="element-abbreviation">Mg</p>
+                <div class="bottomRow">
+                    <p class="element-name">Magnesium</p>
+                    <p>24.31</p>
+                </div>
+            </div>
+
+            <div id="Al" class="element postTransitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>13</p>
+                </div>
+                <p class="element-abbreviation">Al</p>
+                <div class="bottomRow">
+                    <p class="element-name">Aluminum</p>
+                    <p>26.98</p>
+                </div>
+            </div>
+
+            <div id="Si" class="element metalloids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>14</p>
+                </div>
+                <p class="element-abbreviation">Si</p>
+                <div class="bottomRow">
+                    <p class="element-name">Silicon</p>
+                    <p>28.09</p>
+                </div>
+            </div>
+
+            <div id="P" class="element reactiveNonmetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>15</p>
+                </div>
+                <p class="element-abbreviation">P</p>
+                <div class="bottomRow">
+                    <p class="element-name">Phosphorus</p>
+                    <p>30.97</p>
+                </div>
+            </div>
+
+            <div id="S" class="element reactiveNonmetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>16</p>
+                </div>
+                <p class="element-abbreviation">S</p>
+                <div class="bottomRow">
+                    <p class="element-name">Sulfur</p>
+                    <p>32.06</p>
+                </div>
+            </div>
+
+            <div id="Cl" class="element reactiveNonmetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>17</p>
+                </div>
+                <p class="element-abbreviation">Cl</p>
+                <div class="bottomRow">
+                    <p class="element-name">Chlorine</p>
+                    <p>35.45</p>
+                </div>
+            </div>
+
+            <div id="Ar" class="element nobleGases" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>18</p>
+                </div>
+                <p class="element-abbreviation">Ar</p>
+                <div class="bottomRow">
+                    <p class="element-name">Argon</p>
+                    <p>39.95</p>
+                </div>
+            </div>
+
+
+
+
+            <div id="K" class="element alkaliMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>19</p>
+                </div>
+                <p class="element-abbreviation">K</p>
+                <div class="bottomRow">
+                    <p class="element-name">Potassium</p>
+                    <p>39.10</p>
+                </div>
+            </div>
+
+            <div id="Ca" class="element alkalineEarthMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>20</p>
+                </div>
+                <p class="element-abbreviation">Ca</p>
+                <div class="bottomRow">
+                    <p class="element-name">Calcium</p>
+                    <p>40.08</p>
+                </div>
+            </div>
+
+            <div id="Sc" class="element transitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>21</p>
+                </div>
+                <p class="element-abbreviation">Sc</p>
+                <div class="bottomRow">
+                    <p class="element-name">Scandium</p>
+                    <p>44.96</p>
+                </div>
+            </div>
+
+            <div id="Ti" class="element transitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>22</p>
+                </div>
+                <p class="element-abbreviation">Ti</p>
+                <div class="bottomRow">
+                    <p class="element-name">Titanium</p>
+                    <p>47.88</p>
+                </div>
+            </div>
+
+            <div id="V" class="element transitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>23</p>
+                </div>
+                <p class="element-abbreviation">V</p>
+                <div class="bottomRow">
+                    <p class="element-name">Vandium</p>
+                    <p>50.94</p>
+                </div>
+            </div>
+
+            <div id="Cr" class="element transitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>24</p>
+                </div>
+                <p class="element-abbreviation">Cr</p>
+                <div class="bottomRow">
+                    <p class="element-name">Chromium</p>
+                    <p>51.99</p>
+                </div>
+            </div>
+
+            <div id="Mn" class="element transitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>25</p>
+                </div>
+                <p class="element-abbreviation">Mn</p>
+                <div class="bottomRow">
+                    <p class="element-name">Manganese</p>
+                    <p>54.94</p>
+                </div>
+            </div>
+
+            <div id="Fe" class="element transitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>26</p>
+                </div>
+                <p class="element-abbreviation">Fe</p>
+                <div class="bottomRow">
+                    <p class="element-name">Iron</p>
+                    <p>55.85</p>
+                </div>
+            </div>
+
+            <div id="Co" class="element transitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>27</p>
+                </div>
+                <p class="element-abbreviation">Co</p>
+                <div class="bottomRow">
+                    <p class="element-name">Cobalt</p>
+                    <p>58.93</p>
+                </div>
+            </div>
+
+            <div id="Ni" class="element transitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>28</p>
+                </div>
+                <p class="element-abbreviation">Ni</p>
+                <div class="bottomRow">
+                    <p class="element-name">Nickel</p>
+                    <p>58.69</p>
+                </div>
+            </div>
+
+            <div id="Cu" class="element transitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>29</p>
+                </div>
+                <p class="element-abbreviation">Cu</p>
+                <div class="bottomRow">
+                    <p class="element-name">Copper</p>
+                    <p>63.55</p>
+                </div>
+            </div>
+
+            <div id="Zn" class="element transitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>30</p>
+                </div>
+                <p class="element-abbreviation">Zn</p>
+                <div class="bottomRow">
+                    <p class="element-name">Zinc</p>
+                    <p>65.38</p>
+                </div>
+            </div>
+
+            <div id="Ga" class="element postTransitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>31</p>
+                </div>
+                <p class="element-abbreviation">Ga</p>
+                <div class="bottomRow">
+                    <p class="element-name">Gallium</p>
+                    <p>69.72</p>
+                </div>
+            </div>
+
+            <div id="Ge" class="element metalloids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>32</p>
+                </div>
+                <p class="element-abbreviation">Ge</p>
+                <div class="bottomRow">
+                    <p class="element-name">Germanium</p>
+                    <p>72.63</p>
+                </div>
+            </div>
+
+            <div id="As" class="element metalloids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>33</p>
+                </div>
+                <p class="element-abbreviation">As</p>
+                <div class="bottomRow">
+                    <p class="element-name">Arsenic</p>
+                    <p>74.92</p>
+                </div>
+            </div>
+
+            <div id="Se" class="element reactiveNonmetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>34</p>
+                </div>
+                <p class="element-abbreviation">Se</p>
+                <div class="bottomRow">
+                    <p class="element-name">Selenium</p>
+                    <p>78.97</p>
+                </div>
+            </div>
+
+            <div id="Br" class="element reactiveNonmetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>35</p>
+                </div>
+                <p class="element-abbreviation">Br</p>
+                <div class="bottomRow">
+                    <p class="element-name">Bromine</p>
+                    <p>79.90</p>
+                </div>
+            </div>
+
+            <div id="Kr" class="element nobleGases" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>36</p>
+                </div>
+                <p class="element-abbreviation">Kr</p>
+                <div class="bottomRow">
+                    <p class="element-name">Krypton</p>
+                    <p>84.40</p>
+                </div>
+            </div>
+
+
+
+
+            <div id="Rb" class="element alkaliMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>37</p>
+                </div>
+                <p class="element-abbreviation">Rb</p>
+                <div class="bottomRow">
+                    <p class="element-name">Rubidium</p>
+                    <p>85.47</p>
+                </div>
+            </div>
+
+            <div id="Sr" class="element alkalineEarthMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>38</p>
+                </div>
+                <p class="element-abbreviation">Sr</p>
+                <div class="bottomRow">
+                    <p class="element-name">Strontium</p>
+                    <p>87.62</p>
+                </div>
+            </div>
+
+            <div id="Y" class="element transitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>39</p>
+                </div>
+                <p class="element-abbreviation">Y</p>
+                <div class="bottomRow">
+                    <p class="element-name">Yttrium</p>
+                    <p>88.91</p>
+                </div>
+            </div>
+
+            <div id="Zr" class="element transitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>40</p>
+                </div>
+                <p class="element-abbreviation">Zr</p>
+                <div class="bottomRow">
+                    <p class="element-name">Zirconium</p>
+                    <p>91.22</p>
+                </div>
+            </div>
+
+            <div id="Nb" class="element transitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>41</p>
+                </div>
+                <p class="element-abbreviation">Nb</p>
+                <div class="bottomRow">
+                    <p class="element-name">Niobium</p>
+                    <p>92.91</p>
+                </div>
+            </div>
+
+            <div id="Mo" class="element transitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>42</p>
+                </div>
+                <p class="element-abbreviation">Mo</p>
+                <div class="bottomRow">
+                    <p class="element-name">Molybdenum</p>
+                    <p>95.95</p>
+                </div>
+            </div>
+
+            <div id="Tc" class="element transitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>43</p>
+                </div>
+                <p class="element-abbreviation">Tc</p>
+                <div class="bottomRow">
+                    <p class="element-name">Technetium</p>
+                    <p>98.91</p>
+                </div>
+            </div>
+
+            <div id="Ru" class="element transitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>44</p>
+                </div>
+                <p class="element-abbreviation">Ru</p>
+                <div class="bottomRow">
+                    <p class="element-name">Ruthenium</p>
+                    <p>101.07</p>
+                </div>
+            </div>
+
+            <div id="Rh" class="element transitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>45</p>
+                </div>
+                <p class="element-abbreviation">Rh</p>
+                <div class="bottomRow">
+                    <p class="element-name">Rhodium</p>
+                    <p>102.91</p>
+                </div>
+            </div>
+
+            <div id="Pd" class="element transitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>46</p>
+                </div>
+                <p class="element-abbreviation">Pd</p>
+                <div class="bottomRow">
+                    <p class="element-name">Palladium</p>
+                    <p>106.42</p>
+                </div>
+            </div>
+
+            <div id="Ag" class="element transitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>47</p>
+                </div>
+                <p class="element-abbreviation">Ag</p>
+                <div class="bottomRow">
+                    <p class="element-name">Silver</p>
+                    <p>107.87</p>
+                </div>
+            </div>
+
+            <div id="Cd" class="element transitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>48</p>
+                </div>
+                <p class="element-abbreviation">Cd</p>
+                <div class="bottomRow">
+                    <p class="element-name">Cadmium</p>
+                    <p>112.41</p>
+                </div>
+            </div>
+
+            <div id="In" class="element postTransitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>49</p>
+                </div>
+                <p class="element-abbreviation">In</p>
+                <div class="bottomRow">
+                    <p class="element-name">Indium</p>
+                    <p>114.82</p>
+                </div>
+            </div>
+
+            <div id="Sn" class="element postTransitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>50</p>
+                </div>
+                <p class="element-abbreviation">Sn</p>
+                <div class="bottomRow">
+                    <p class="element-name">Tin</p>
+                    <p>118.71</p>
+                </div>
+            </div>
+
+            <div id="Sb" class="element metalloids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>51</p>
+                </div>
+                <p class="element-abbreviation">Sb</p>
+                <div class="bottomRow">
+                    <p class="element-name">Antimony</p>
+                    <p>121.76</p>
+                </div>
+            </div>
+
+            <div id="Te" class="element metalloids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>52</p>
+                </div>
+                <p class="element-abbreviation">Te</p>
+                <div class="bottomRow">
+                    <p class="element-name">Tellurium</p>
+                    <p>127.6</p>
+                </div>
+            </div>
+
+            <div id="I" class="element reactiveNonmetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>53</p>
+                </div>
+                <p class="element-abbreviation">I</p>
+                <div class="bottomRow">
+                    <p class="element-name">Iodine</p>
+                    <p>126.90</p>
+                </div>
+            </div>
+
+            <div id="Xe" class="element nobleGases" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>54</p>
+                </div>
+                <p class="element-abbreviation">Xe</p>
+                <div class="bottomRow">
+                    <p class="element-name">Xenon</p>
+                    <p>131.29</p>
+                </div>
+            </div>
+
+
+
+
+            <div id="Cs" class="element alkaliMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>55</p>
+                </div>
+                <p class="element-abbreviation">Cs</p>
+                <div class="bottomRow">
+                    <p class="element-name">Cesium</p>
+                    <p>132.91</p>
+                </div>
+            </div>
+
+            <div id="Ba" class="element alkalineEarthMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>56</p>
+                </div>
+                <p class="element-abbreviation">Ba</p>
+                <div class="bottomRow">
+                    <p class="element-name">Barium</p>
+                    <p>137.33</p>
+                </div>
+            </div>
+
+            <div id="Lanthanoids" class="element lanthanoids">
+                <p class="element-name">Lanthanoids</p>
+                <p class="row-numbers">57-71</p>
+            </div>
+
+            <div id="Hf" class="element transitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>72</p>
+                </div>
+                <p class="element-abbreviation">Hf</p>
+                <div class="bottomRow">
+                    <p class="element-name">Hafnium</p>
+                    <p>178.49</p>
+                </div>
+            </div>
+
+            <div id="Ta" class="element transitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>73</p>
+                </div>
+                <p class="element-abbreviation">Ta</p>
+                <div class="bottomRow">
+                    <p class="element-name">Tantalum</p>
+                    <p>180.95</p>
+                </div>
+            </div>
+
+            <div id="W" class="element transitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>74</p>
+                </div>
+                <p class="element-abbreviation">W</p>
+                <div class="bottomRow">
+                    <p class="element-name">Tungsten</p>
+                    <p>183.85</p>
+                </div>
+            </div>
+
+            <div id="Re" class="element transitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>75</p>
+                </div>
+                <p class="element-abbreviation">Re</p>
+                <div class="bottomRow">
+                    <p class="element-name">Rhenium</p>
+                    <p>186.21</p>
+                </div>
+            </div>
+
+            <div id="Os" class="element transitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>76</p>
+                </div>
+                <p class="element-abbreviation">Os</p>
+                <div class="bottomRow">
+                    <p class="element-name">Osmium</p>
+                    <p>190.23</p>
+                </div>
+            </div>
+
+            <div id="Ir" class="element transitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>77</p>
+                </div>
+                <p class="element-abbreviation">Ir</p>
+                <div class="bottomRow">
+                    <p class="element-name">Iridium</p>
+                    <p>192.22</p>
+                </div>
+            </div>
+
+            <div id="Pt" class="element transitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>78</p>
+                </div>
+                <p class="element-abbreviation">Pt</p>
+                <div class="bottomRow">
+                    <p class="element-name">Platinum</p>
+                    <p>195.08</p>
+                </div>
+            </div>
+
+            <div id="Au" class="element transitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>79</p>
+                </div>
+                <p class="element-abbreviation">Au</p>
+                <div class="bottomRow">
+                    <p class="element-name">Gold</p>
+                    <p>196.97</p>
+                </div>
+            </div>
+
+            <div id="Hg" class="element transitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>80</p>
+                </div>
+                <p class="element-abbreviation">Hg</p>
+                <div class="bottomRow">
+                    <p class="element-name">Mercury</p>
+                    <p>200.59</p>
+                </div>
+            </div>
+
+            <div id="Tl" class="element postTransitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>81</p>
+                </div>
+                <p class="element-abbreviation">Tl</p>
+                <div class="bottomRow">
+                    <p class="element-name">Thallium</p>
+                    <p>204.38</p>
+                </div>
+            </div>
+
+            <div id="Pb" class="element postTransitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>82</p>
+                </div>
+                <p class="element-abbreviation">Pb</p>
+                <div class="bottomRow">
+                    <p class="element-name">Lead</p>
+                    <p>207.20</p>
+                </div>
+            </div>
+
+            <div id="Bi" class="element postTransitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>83</p>
+                </div>
+                <p class="element-abbreviation">Bi</p>
+                <div class="bottomRow">
+                    <p class="element-name">Bismuth</p>
+                    <p>208.98</p>
+                </div>
+            </div>
+
+            <div id="Po" class="element postTransitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>84</p>
+                </div>
+                <p class="element-abbreviation">Po</p>
+                <div class="bottomRow">
+                    <p class="element-name">Polonium</p>
+                    <p>208.98</p>
+                </div>
+            </div>
+
+            <div id="At" class="element metalloids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>85</p>
+                </div>
+                <p class="element-abbreviation">At</p>
+                <div class="bottomRow">
+                    <p class="element-name">Astatine</p>
+                    <p>209.98</p>
+                </div>
+            </div>
+
+            <div id="Rn" class="element nobleGases" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>86</p>
+                </div>
+                <p class="element-abbreviation">Rn</p>
+                <div class="bottomRow">
+                    <p class="element-name">Radon</p>
+                    <p>222.02</p>
+                </div>
+            </div>
+
+
+
+
+            <div id="Fr" class="element alkaliMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>87</p>
+                </div>
+                <p class="element-abbreviation">Fr</p>
+                <div class="bottomRow">
+                    <p class="element-name">Francium</p>
+                    <p>223.02</p>
+                </div>
+            </div>
+
+            <div id="Ra" class="element alkalineEarthMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>88</p>
+                </div>
+                <p class="element-abbreviation">Ra</p>
+                <div class="bottomRow">
+                    <p class="element-name">Radium</p>
+                    <p>226.03</p>
+                </div>
+            </div>
+
+            <div id="Actinoids" class="element actinoids">
+                <p class="element-name">Actinoids</p>
+                <p class="row-numbers">89-103</p>
+            </div>
+
+            <div id="Rf" class="element transitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>104</p>
+                </div>
+                <p class="element-abbreviation">Rf</p>
+                <div class="bottomRow">
+                    <p class="element-name">Rutherfordium</p>
+                    <p>261</p>
+                </div>
+            </div>
+
+            <div id="Db" class="element transitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>105</p>
+                </div>
+                <p class="element-abbreviation">Db</p>
+                <div class="bottomRow">
+                    <p class="element-name">Dubnium</p>
+                    <p>262</p>
+                </div>
+            </div>
+
+            <div id="Sg" class="element transitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>106</p>
+                </div>
+                <p class="element-abbreviation">Sg</p>
+                <div class="bottomRow">
+                    <p class="element-name">Seaborgium</p>
+                    <p>266</p>
+                </div>
+            </div>
+
+            <div id="Bh" class="element transitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>107</p>
+                </div>
+                <p class="element-abbreviation">Bh</p>
+                <div class="bottomRow">
+                    <p class="element-name">Bohrium</p>
+                    <p>264</p>
+                </div>
+            </div>
+
+            <div id="Hs" class="element transitionMetals" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>108</p>
+                </div>
+                <p class="element-abbreviation">Hs</p>
+                <div class="bottomRow">
+                    <p class="element-name">Hassium</p>
+                    <p>269</p>
+                </div>
+            </div>
+
+            <div id="Mt" class="element noSeries" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>109</p>
+                </div>
+                <p class="element-abbreviation">Mt</p>
+                <div class="bottomRow">
+                    <p class="element-name">Meitnerium</p>
+                    <p>278</p>
+                </div>
+            </div>
+
+            <div id="Ds" class="element noSeries" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>110</p>
+                </div>
+                <p class="element-abbreviation">Ds</p>
+                <div class="bottomRow">
+                    <p class="element-name">Darmstadtium</p>
+                    <p>281</p>
+                </div>
+            </div>
+
+            <div id="Rg" class="element noSeries" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>111</p>
+                </div>
+                <p class="element-abbreviation">Rg</p>
+                <div class="bottomRow">
+                    <p class="element-name">Roentgenium</p>
+                    <p>280</p>
+                </div>
+            </div>
+
+            <div id="Cn" class="element noSeries" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>112</p>
+                </div>
+                <p class="element-abbreviation">Cn</p>
+                <div class="bottomRow">
+                    <p class="element-name">Copernicium</p>
+                    <p>285</p>
+                </div>
+            </div>
+
+            <div id="Nh" class="element noSeries" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>113</p>
+                </div>
+                <p class="element-abbreviation">Nh</p>
+                <div class="bottomRow">
+                    <p class="element-name">Nihonium</p>
+                    <p>286</p>
+                </div>
+            </div>
+
+            <div id="Fl" class="element noSeries" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>114</p>
+                </div>
+                <p class="element-abbreviation">Fl</p>
+                <div class="bottomRow">
+                    <p class="element-name">Flerovium</p>
+                    <p>289</p>
+                </div>
+            </div>
+
+            <div id="Mc" class="element noSeries" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>115</p>
+                </div>
+                <p class="element-abbreviation">Mc</p>
+                <div class="bottomRow">
+                    <p class="element-name">Moscovium</p>
+                    <p>289</p>
+                </div>
+            </div>
+
+            <div id="Lv" class="element noSeries" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>116</p>
+                </div>
+                <p class="element-abbreviation">Lv</p>
+                <div class="bottomRow">
+                    <p class="element-name">Livermorium</p>
+                    <p>293</p>
+                </div>
+            </div>
+
+            <div id="Ts" class="element noSeries" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>117</p>
+                </div>
+                <p class="element-abbreviation">Ts</p>
+                <div class="bottomRow">
+                    <p class="element-name">Tennessine</p>
+                    <p>294</p>
+                </div>
+            </div>
+
+            <div id="Og" class="element noSeries" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>118</p>
+                </div>
+                <p class="element-abbreviation">Og</p>
+                <div class="bottomRow">
+                    <p class="element-name">Oganesson</p>
+                    <p>294</p>
+                </div>
+            </div>
+
+
+
+            <div id="La" class="element lanthanoids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>57</p>
+                </div>
+                <p class="element-abbreviation">La</p>
+                <div class="bottomRow">
+                    <p class="element-name">Lanthanum</p>
+                    <p>138.91</p>
+                </div>
+            </div>
+
+            <div id="Ce" class="element lanthanoids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>58</p>
+                </div>
+                <p class="element-abbreviation">Ce</p>
+                <div class="bottomRow">
+                    <p class="element-name">Cerium</p>
+                    <p>140.12</p>
+                </div>
+            </div>
+
+            <div id="Pr" class="element lanthanoids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>59</p>
+                </div>
+                <p class="element-abbreviation">Pr</p>
+                <div class="bottomRow">
+                    <p class="element-name">Praseodymium</p>
+                    <p>140.91</p>
+                </div>
+            </div>
+
+            <div id="Nd" class="element lanthanoids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>60</p>
+                </div>
+                <p class="element-abbreviation">Nd</p>
+                <div class="bottomRow">
+                    <p class="element-name">Neodymium</p>
+                    <p>144.24</p>
+                </div>
+            </div>
+
+            <div id="Pm" class="element lanthanoids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>61</p>
+                </div>
+                <p class="element-abbreviation">Pm</p>
+                <div class="bottomRow">
+                    <p class="element-name">Promethium</p>
+                    <p>144.91</p>
+                </div>
+            </div>
+
+            <div id="Sm" class="element lanthanoids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>62</p>
+                </div>
+                <p class="element-abbreviation">Sm</p>
+                <div class="bottomRow">
+                    <p class="element-name">Samarium</p>
+                    <p>150.36</p>
+                </div>
+            </div>
+
+            <div id="Eu" class="element lanthanoids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>63</p>
+                </div>
+                <p class="element-abbreviation">Eu</p>
+                <div class="bottomRow">
+                    <p class="element-name">Europium</p>
+                    <p>151.96</p>
+                </div>
+            </div>
+
+            <div id="Gd" class="element lanthanoids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>64</p>
+                </div>
+                <p class="element-abbreviation">Gd</p>
+                <div class="bottomRow">
+                    <p class="element-name">Gadolinium</p>
+                    <p>157.25</p>
+                </div>
+            </div>
+
+            <div id="Tb" class="element lanthanoids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>65</p>
+                </div>
+                <p class="element-abbreviation">Tb</p>
+                <div class="bottomRow">
+                    <p class="element-name">Terbium</p>
+                    <p>158.93</p>
+                </div>
+            </div>
+
+            <div id="Dy" class="element lanthanoids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>66</p>
+                </div>
+                <p class="element-abbreviation">Dy</p>
+                <div class="bottomRow">
+                    <p class="element-name">Dysprosium</p>
+                    <p>162.50</p>
+                </div>
+            </div>
+
+            <div id="Ho" class="element lanthanoids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>67</p>
+                </div>
+                <p class="element-abbreviation">Ho</p>
+                <div class="bottomRow">
+                    <p class="element-name">Holmium</p>
+                    <p>164.93</p>
+                </div>
+            </div>
+
+            <div id="Er" class="element lanthanoids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>68</p>
+                </div>
+                <p class="element-abbreviation">Er</p>
+                <div class="bottomRow">
+                    <p class="element-name">Erbium</p>
+                    <p>167.26</p>
+                </div>
+            </div>
+
+            <div id="Tm" class="element lanthanoids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>69</p>
+                </div>
+                <p class="element-abbreviation">Tm</p>
+                <div class="bottomRow">
+                    <p class="element-name">Thulium</p>
+                    <p>168.93</p>
+                </div>
+            </div>
+
+            <div id="Yb" class="element lanthanoids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>70</p>
+                </div>
+                <p class="element-abbreviation">Yb</p>
+                <div class="bottomRow">
+                    <p class="element-name">Ytterbium</p>
+                    <p>173.06</p>
+                </div>
+            </div>
+
+            <div id="Lu" class="element lanthanoids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>71</p>
+                </div>
+                <p class="element-abbreviation">Lu</p>
+                <div class="bottomRow">
+                    <p class="element-name">Lutetium</p>
+                    <p>174.97</p>
+                </div>
+            </div>
+
+
+
+
+            <div id="Ac" class="element actinoids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>89</p>
+                </div>
+                <p class="element-abbreviation">Ac</p>
+                <div class="bottomRow">
+                    <p class="element-name">Actinium</p>
+                    <p>227</p>
+                </div>
+            </div>
+
+            <div id="Th" class="element actinoids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>90</p>
+                </div>
+                <p class="element-abbreviation">Th</p>
+                <div class="bottomRow">
+                    <p class="element-name">Thorium</p>
+                    <p>232.04</p>
+                </div>
+            </div>
+
+            <div id="Pa" class="element actinoids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>91</p>
+                </div>
+                <p class="element-abbreviation">Pa</p>
+                <div class="bottomRow">
+                    <p class="element-name">Protactinium</p>
+                    <p>231.04</p>
+                </div>
+            </div>
+
+            <div id="U" class="element actinoids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>92</p>
+                </div>
+                <p class="element-abbreviation">U</p>
+                <div class="bottomRow">
+                    <p class="element-name">Uranium</p>
+                    <p>283.03</p>
+                </div>
+            </div>
+
+            <div id="Np" class="element actinoids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>93</p>
+                </div>
+                <p class="element-abbreviation">Np</p>
+                <div class="bottomRow">
+                    <p class="element-name">Neptunium</p>
+                    <p>237.05</p>
+                </div>
+            </div>
+
+            <div id="Pu" class="element actinoids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>94</p>
+                </div>
+                <p class="element-abbreviation">Pu</p>
+                <div class="bottomRow">
+                    <p class="element-name">Plutonium</p>
+                    <p>244.06</p>
+                </div>
+            </div>
+
+            <div id="Am" class="element actinoids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>95</p>
+                </div>
+                <p class="element-abbreviation">Am</p>
+                <div class="bottomRow">
+                    <p class="element-name">Americium</p>
+                    <p>243.06</p>
+                </div>
+            </div>
+
+            <div id="Cm" class="element actinoids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>96</p>
+                </div>
+                <p class="element-abbreviation">Cm</p>
+                <div class="bottomRow">
+                    <p class="element-name">Curium</p>
+                    <p>247.07</p>
+                </div>
+            </div>
+
+            <div id="Bk" class="element actinoids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>97</p>
+                </div>
+                <p class="element-abbreviation">Bk</p>
+                <div class="bottomRow">
+                    <p class="element-name">Berkelium</p>
+                    <p>247.07</p>
+                </div>
+            </div>
+
+            <div id="Cf" class="element actinoids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>98</p>
+                </div>
+                <p class="element-abbreviation">Cf</p>
+                <div class="bottomRow">
+                    <p class="element-name">Californium</p>
+                    <p>251.08</p>
+                </div>
+            </div>
+
+            <div id="Es" class="element actinoids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>99</p>
+                </div>
+                <p class="element-abbreviation">Es</p>
+                <div class="bottomRow">
+                    <p class="element-name">Einsteinium</p>
+                    <p>254</p>
+                </div>
+            </div>
+
+            <div id="Fm" class="element actinoids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>100</p>
+                </div>
+                <p class="element-abbreviation">Fm</p>
+                <div class="bottomRow">
+                    <p class="element-name">Fermium</p>
+                    <p>257.10</p>
+                </div>
+            </div>
+
+            <div id="Md" class="element actinoids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>101</p>
+                </div>
+                <p class="element-abbreviation">Md</p>
+                <div class="bottomRow">
+                    <p class="element-name">Mendelevium</p>
+                    <p>258.10</p>
+                </div>
+            </div>
+
+            <div id="No" class="element actinoids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>102</p>
+                </div>
+                <p class="element-abbreviation">No</p>
+                <div class="bottomRow">
+                    <p class="element-name">Nobelium</p>
+                    <p>259.10</p>
+                </div>
+            </div>
+
+            <div id="Lr" class="element actinoids" onClick="showModal(id)">
+                <div class="topRow">
+                    <p>103</p>
+                </div>
+                <p class="element-abbreviation">Lr</p>
+                <div class="bottomRow">
+                    <p class="element-name">Lawrencium</p>
+                    <p>262</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <a rel="noreferrer" href="https://patrickmooney.tech">
+                Made by Patrick Mooney
+            </a>
+            <a class="contact" rel="noreferrer" href="mailto:pfmooney@me.com">
+                <i class="fa-regular fa-envelope"></i>Contact
+            </a>
+        </div>
+    </footer>
+    <script src="files-for-periodic-table/periodicTableScripts.js"></script>
+</body>
+
+</html>

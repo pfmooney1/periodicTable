@@ -11,6 +11,20 @@ const modalElementName = document.getElementById("elementName");
 const modalElementType = document.getElementById("elementType");
 const modalMeltingPoint = document.getElementById("meltingPoint");
 
+function updateTheme() {
+    let selection = document.getElementById("theme-selector").value;
+    let body = document.getElementById("body");
+    if (selection === "medieval") {
+        body.dataset.theme = "medieval";
+    }
+    else if (selection === "glassmorphism") {
+        body.dataset.theme = "glassmorphism";
+    }
+    else {
+        body.dataset.theme = "classic";
+    }
+}
+
 function getElementToPass(id) {
     if (id == "H") {
         return H;

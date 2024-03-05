@@ -9,15 +9,18 @@
     <script src="https://kit.fontawesome.com/afaae90d55.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body id="body" data-theme="classic">
     <header>
         <div class="header-content">
-                <a rel="noreferrer" href="https://patrickmooney.tech"  class="logo-and-title">
-                    <i class="fa-solid fa-flask logo"></i>
-                    <h1 class="title">Periodic Table</h1>
-                </a>
-
-            <a rel="noreferrer" href="https://patrickmooney.tech">Home</a>
+            <a rel="noreferrer" href="https://patrickmooney.tech"  class="logo-and-title">
+                <i class="fa-solid fa-flask logo"></i>
+                <h1 class="title">Periodic Table</h1>
+            </a>
+            <select class="theme-selector" id="theme-selector" onChange="updateTheme();">
+                <option value="classic">Classic Theme</option>
+                <option value="glassmorphism">Glassmorphism</option>
+                <option value="medieval">Medieval</option>
+            </select>
         </div>
     </header>
     <main>

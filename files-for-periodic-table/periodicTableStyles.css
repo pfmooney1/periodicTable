@@ -805,23 +805,23 @@ body[data-theme="medieval"] {
     }
 
     & .alkalineEarthMetals {
-        background: orange;
-        background: linear-gradient(to top right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+        background: red;
+        background: url(../assets/vellum-red.png);
     }
-
+    
     & .lanthanoids {
         background: darkblue;
         background: url(../assets/vellum-darkblue.png);
     }
-
+    
     & .actinoids {
         background: maroon;
         background: url(../assets/vellum-maroon.png);
     }
-
+    
     & .transitionMetals {
-        background: red;
-        background: url(../assets/vellum-red.png);
+        background: orange;
+        background: linear-gradient(to top right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
     }
 
     & .postTransitionMetals {

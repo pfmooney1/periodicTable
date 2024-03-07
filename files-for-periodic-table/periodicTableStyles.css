@@ -1,11 +1,20 @@
+@font-face {
+    font-family: medieval;
+    src: url("../assets/canterbury.regular.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
     --lucida: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    --medieval: medieval;
     --light-gray: #d6d6d6;
     --dark-gray: #191919;
 }
 
 body {
     background-color: var(--dark-gray);
+    background-image: url(../assets/cube-pattern.png);
     margin: 0;
 }
 
@@ -58,6 +67,7 @@ header {
         margin: 0;
         max-width: 40vw;
     }
+
     & select {
         background: transparent;
         border: none;
@@ -66,6 +76,7 @@ header {
         text-align: right;
         font-weight: 600;
     }
+
     & select:hover,
     & select:focus-visible {
         outline: none;
@@ -117,10 +128,12 @@ footer {
         gap: 10px;
         text-align: center;
         color: black;
+
         & .made-with-panel {
             font-family: var(--lucida);
             font-weight: 600;
         }
+
         & .icons img {
             padding-inline: 4px;
         }
@@ -248,15 +261,18 @@ footer {
     & .bottomRow {
         margin: 0;
         padding: 0;
+
         & p:not(.element-name) {
             display: none;
         }
     }
+
     & .element-abbreviation {
         font-size: 14px;
     }
+
     & .row-numbers {
-        font-size: 8px; 
+        font-size: 8px;
     }
 }
 
@@ -275,6 +291,7 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     & .element-name {
         font-size: 8px;
     }
@@ -284,9 +301,11 @@ footer {
     .element {
         min-width: 65px;
         min-height: 65px;
+
         & .element-abbreviation {
-                font-size: 18px;
-            }
+            font-size: 18px;
+        }
+
         & .bottomRow p:not(.element-name) {
             display: inline;
             font-size: 10px;
@@ -295,7 +314,7 @@ footer {
 
     .element#Lanthanoids .element-name,
     .element#Actinoids .element-name {
-            font-size: 10px;
+        font-size: 10px;
     }
 }
 
@@ -358,14 +377,17 @@ footer {
             font-size: 20px;
             display: inline;
         }
+
         & #modalMiniMass {
             display: inline;
             font-size: 16px;
             padding-top: 6px;
         }
+
         & #modalMiniAtomicNumber {
             font-size: 20px;
         }
+
         & .bottomRow {
             display: flex;
             flex-direction: column;
@@ -382,6 +404,7 @@ footer {
         border-radius: 8px;
         background-color: #2865e1;
         color: white;
+
         & i {
             font-weight: 700;
         }
@@ -393,6 +416,7 @@ footer {
         #modalContent {
             padding: 40px;
             margin: 20px;
+
             & .description {
                 font-size: 18px;
             }
@@ -472,21 +496,32 @@ body[data-theme="glassmorphism"] {
     & main {
         background: #00000020;
     }
+
     & .element {
         border-radius: 12px;
     }
+
     & .element .topRow p {
         padding-left: 3px;
         padding-top: 1px;
     }
+    & #modalBackground #modalContent {
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 8px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5.4px);
+        -webkit-backdrop-filter: blur(5.4px);
+        border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+
     & header,
     footer {
-            background: rgba(255, 255, 255, 0.39);
-            border-radius: 8px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(5.4px);
-            -webkit-backdrop-filter: blur(5.4px);
-            border: 1px solid rgba(255, 255, 255, 0.6);
+        background: rgba(255, 255, 255, 0.39);
+        border-radius: 8px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5.4px);
+        -webkit-backdrop-filter: blur(5.4px);
+        border: 1px solid rgba(255, 255, 255, 0.6);
     }
 
     & .alkaliMetals {
@@ -581,7 +616,304 @@ body[data-theme="glassmorphism"] {
 }
 
 
+body[data-theme="medieval"] {
+    background-color: #DED1A9;
+    background: url(../assets/vellum.png);
+    background-repeat: repeat;
+    font-family: var(--medieval);
+    & main {
+        background: url(../assets/vellum.png);
+        background-repeat: repeat;
+        /* Hide Scrollbar */
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
 
+    & .periodic-table {
+        grid-template-rows: repeat(10, minmax(60px, auto));
+    }
+
+
+    & header {
+        border-top: 35px solid;
+        border-image: url(../assets/gold-blue-frame.avif) 50 / 40px / 0px 40px repeat;
+        background: transparent;
+        padding-bottom: 45px;
+        padding-top: 10px;
+        & .header-content {
+            & .logo {
+                background: linear-gradient(to top right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+            }
+            & .title {
+                font-family: var(--medieval);
+                font-size: 30px;
+            }
+            & .title::first-letter {
+                color: rgb(177, 0, 0);
+                font-size: 1.4em;
+            }
+            & select {
+                font-family: var(--medieval);
+                font-size: 24px;
+            }
+        }
+    }
+    & #modalBackground #modalContent {
+        background: url(../assets/vellum.png);
+        border: 3px solid black;
+        border-top-left-radius: 255px 15px;
+        border-top-right-radius: 15px 225px;
+        border-bottom-right-radius: 225px 15px;
+        border-bottom-left-radius: 15px 255px;
+        & #modalMiniElement {
+            border: 3px solid rgb(29, 15, 0);
+            border-top-left-radius: 25px 15px;
+            border-top-right-radius: 15px 22px;
+            border-bottom-right-radius: 55px 8px;
+            border-bottom-left-radius: 3px 101px;
+            & #modalMiniAbbr {
+                font-size: 80px;
+            }
+            & #modalMiniName {
+                font-size: 35px;
+            }
+            & #modalMiniMass {
+                font-size: 22px;
+            }
+        }
+        & .description {
+            font-family: var(--medieval);
+            font-size: 22px;
+        }
+        & #modalCloseButton {
+            font-family: var(--medieval);
+            font-size: 22px;
+            border: 4px solid rgb(29, 15, 0);
+            border-top-left-radius: 38px 5px;
+            border-top-right-radius: 9px 29px;
+            border-bottom-right-radius: 22px 10px;
+            border-bottom-left-radius: 5px 101px;
+            & i {
+                display: none;
+            }
+        }
+        & #modalCloseButton::before {
+            content: "X";
+            display: inline;
+            position: relative;
+        }
+    }
+
+    & footer {
+        border-top: 35px solid;
+        border-image: url(../assets/gold-blue-frame.avif) 50 / 40px / 0px 40px repeat;
+        background: transparent;
+        padding-bottom: 60px;
+        padding-top: 20px;
+        & *:not(i),
+        & .made-with-panel {
+            font-family: var(--medieval);
+            font-size: 28px;
+        }
+        & a::first-letter {
+            color: rgb(27, 27, 206);
+            font-size: 1.25em;
+        }
+        & .made-with-panel::first-letter {
+            color: rgb(177, 0, 0);
+            font-size: 1.4em;
+        }
+        & .contact i {
+            display: none;
+        }
+    }
+
+    & .category-title {
+        font-family: var(--medieval);
+        color: black;
+        font-size: 20px;
+        text-align: center;
+        border: 3px solid rgb(29, 15, 0);
+        border-top-left-radius: 255px 15px;
+        border-top-right-radius: 15px 225px;
+        border-bottom-right-radius: 225px 15px;
+        border-bottom-left-radius: 15px 255px;
+    }
+
+    & .element {
+        height: 60px;
+        width: 60px;
+        padding: 2px;
+        border: 3px solid rgb(29, 15, 0);
+        border-top-left-radius: 255px 15px;
+        border-top-right-radius: 15px 225px;
+        border-bottom-right-radius: 225px 15px;
+        border-bottom-left-radius: 15px 255px;
+        & p {
+            font-family: var(--medieval);
+            color: #000;
+        }
+        & .element-abbreviation {
+            font-size: 22px;
+        }
+        & .bottomRow p:not(.element-name) {
+            display: none;
+        }
+    
+        & .topRow {
+            font-size: 12px;
+        }
+    
+        & .element-name {
+            font-size: 14px;
+        }
+    }
+
+    & .element:nth-of-type(3n),
+    & .element:nth-of-type(8n) {
+        border: 4px solid black;
+        border-top-left-radius: 24px 22px;
+        border-top-right-radius: 23px 13px;
+        border-bottom-right-radius: 24px 14px;
+        border-bottom-left-radius: 6px 119px;
+    }
+
+    & .element:nth-of-type(5n),
+    & .element:nth-of-type(11n) {
+        border: 3px solid rgb(29, 15, 0);
+        border-top-left-radius: 25px 15px;
+        border-top-right-radius: 15px 22px;
+        border-bottom-right-radius: 55px 8px;
+        border-bottom-left-radius: 3px 101px;
+    }
+
+    & .element:nth-of-type(7n),
+    & .element:nth-of-type(13n) {
+        border: 4px solid rgb(29, 15, 0);
+        border-top-left-radius: 38px 5px;
+        border-top-right-radius: 9px 29px;
+        border-bottom-right-radius: 22px 10px;
+        border-bottom-left-radius: 5px 101px;
+    }
+
+    & .alkaliMetals {
+        background: brown;
+        background: url(../assets/vellum-brown.png);
+    }
+
+    & .alkalineEarthMetals {
+        background: orange;
+        background: linear-gradient(to top right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+    }
+
+    & .lanthanoids {
+        background: darkblue;
+        background: url(../assets/vellum-darkblue.png);
+    }
+
+    & .actinoids {
+        background: maroon;
+        background: url(../assets/vellum-maroon.png);
+    }
+
+    & .transitionMetals {
+        background: red;
+        background: url(../assets/vellum-red.png);
+    }
+
+    & .postTransitionMetals {
+        background: blue;
+        background: url(../assets/vellum-blue.png);
+    }
+
+    & .metalloids {
+        background: darkgreen;
+        background: url(../assets/vellum-green.png);
+    }
+
+    & .reactiveNonmetals {
+        background: limegreen;
+        background: url(../assets/vellum-lime.png);
+    }
+
+    & .nobleGases {
+        background: purple;
+        background: url(../assets/vellum-purple.png);
+    }
+
+    & .noSeries {
+        background: #474747;
+        background: linear-gradient(to top right, #717171, #c1c1c1, #a7a7a7, #eaeaea, #8f8e8e);
+    }
+
+    & .category-title.metalloids,
+    & .element.metalloids *,
+    & .category-title.actinoids,
+    & .element.actinoids *,
+    & .category-title.nobleGases,
+    & .element.nobleGases *,
+    & .category-title.lanthanoids,
+    & .element.lanthanoids * {
+        color: #e6e6e6;
+    }
+
+    & #Lanthanoids p,
+    & #Actinoids p,
+    & #Lanthanoids .element-name,
+    & #Actinoids .element-name {
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 400px) {
+    body[data-theme="medieval"] {
+        & header {
+            border-top: 35px solid;
+            border-image: url(../assets/gold-blue-frame.avif) 50 / 40px / 0px repeat;
+            background: transparent;
+            padding-bottom: 45px;
+            padding-top: 10px;
+        }
+        
+        & footer {
+            border-top: 35px solid;
+            border-image: url(../assets/gold-blue-frame.avif) 50 / 40px / 0px repeat;
+            background: transparent;
+            padding-bottom: 60px;
+            padding-top: 20px;
+        }
+        & .header-content,
+        & .footer-content {
+            padding-inline: 42px;
+        }
+    }
+}
+
+@media screen and (min-width: 40em) {
+    body[data-theme="medieval"] {
+        & main {
+            min-height: calc(100vh - 250px);
+        }
+    }
+}
+
+
+@media screen and (min-width: 64em) {
+    body[data-theme="medieval"] {
+        .element {
+            & .element-abbreviation {
+                font-size: 30px;
+            }
+            
+            & .element-name {
+                font-size: 16px;
+            }
+        }
+    }
+}
 
 
 

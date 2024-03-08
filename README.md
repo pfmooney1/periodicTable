@@ -8,11 +8,11 @@ This interactive Periodic Table is built using nested CSS. Clicking elements dis
 
 ## Built With
 
--HTML
+- HTML
 
--CSS
+- CSS
 
--Vanilla JS
+- Vanilla JS
 
 
 ## Contact

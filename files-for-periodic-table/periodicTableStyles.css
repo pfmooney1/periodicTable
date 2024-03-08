@@ -75,6 +75,7 @@ header {
         font-family: var(--lucida);
         text-align: right;
         font-weight: 600;
+        color: black;
     }
 
     & select:hover,

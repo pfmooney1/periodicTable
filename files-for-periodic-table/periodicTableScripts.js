@@ -1,5 +1,3 @@
-/*eslint-env es6*/
-/*eslint-env browser*/
 const modalAtomicMass = document.getElementById("atomicMass");
 const modalAtomicNumber = document.getElementById("atomicNumber");
 const modalBackground = document.getElementById("modalBackground");
@@ -471,9 +469,9 @@ function writeModal(id, passedElement, passedElementClass) {
 
 
 window.onclick = function(event) {
-  if (event.target == modalBackground) {
-      showModal();
-  }
+    if (event.target == modalBackground) {
+        showModal();
+    }
 }
 
 /* JS Element Information */

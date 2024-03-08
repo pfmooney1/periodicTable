@@ -1,43 +1,27 @@
-# PeriodicTable
-
-## Interactive Periodic Table
-
+# Interactive Periodic Table
 
 
 ## About The Project
 
-The interactive Periodic Table of Elements is just that. Clicking elements displays a modal with more information about each element displayed inside. It is meant to eventually be a resource for teachers in the classroom.
-
+This interactive Periodic Table is built using nested CSS. Clicking elements displays a modal with more information about each element. The three theme options are Classic, Glassmorphism, and Medieval.
 
 
 ## Built With
 
 -HTML
 
--CSS with grid
+-CSS
 
--VanillaJS
-
-
-
-## Roadmap
-
--Add Changelog
-
--Add ability to customize color of element groups
-
--Add more data to the modal
-
--Add settings screen
-
+-Vanilla JS
 
 
 ## Contact
 
 Patrick Mooney - pfmooney@me.com
 
-Project Link: https://github.com/pfmooney1/periodicTable
+Site: https://patrickmooney.tech/
 
+Project Link: https://github.com/pfmooney1/periodicTable
 
 
 ## Acknowledgments

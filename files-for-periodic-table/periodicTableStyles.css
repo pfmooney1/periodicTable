@@ -622,6 +622,9 @@ body[data-theme="medieval"] {
     background: url(../assets/vellum.png);
     background-repeat: repeat;
     font-family: var(--medieval);
+    & *:not(i) {
+        font-weight: normal !important;
+    }
     & main {
         background: url(../assets/vellum.png);
         background-repeat: repeat;

@@ -762,13 +762,21 @@ body[data-theme="medieval"] {
         }
         & .element-abbreviation {
             font-size: 22px;
+            line-height: 0.8;
         }
-        & .bottomRow p:not(.element-name) {
-            display: none;
+        & .bottomRow {
+            line-height: 1;
+            & p:not(.element-name) {
+                display: none;
+            }
         }
     
         & .topRow {
             font-size: 12px;
+            line-height: 1;
+            & p {
+                line-height: 0.9;
+            }
         }
     
         & .element-name {

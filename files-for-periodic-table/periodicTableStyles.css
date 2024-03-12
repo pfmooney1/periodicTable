@@ -680,12 +680,14 @@ body[data-theme="medieval"] {
             border-bottom-left-radius: 3px 101px;
             & #modalMiniAbbr {
                 font-size: 80px;
+                line-height: 0.9;
             }
             & #modalMiniName {
                 font-size: 35px;
             }
             & #modalMiniMass {
                 font-size: 22px;
+                padding-top: 4px;
             }
         }
         & .description {
